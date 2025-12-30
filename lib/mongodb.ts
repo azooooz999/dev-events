@@ -8,7 +8,7 @@ interface MongooseCache {
 
 // Extend the NodeJS global type to include our mongoose cache
 declare global {
-	// eslint-disable-next-line no-var
+	// eslint-disable-next-line-no-var
 	var mongoose: MongooseCache | undefined;
 }
 
@@ -16,7 +16,7 @@ declare global {
 const MONGODB_URI = process.env.MONGODB_URI;
 
 // Initialize the cache on the global object to persist across hot reloads in development
-let cached: MongooseCache = global.mongoose || { conn: null, promise: null };
+const cached: MongooseCache = global.mongoose || { conn: null, promise: null };
 
 if (!global.mongoose) {
 	global.mongoose = cached;
