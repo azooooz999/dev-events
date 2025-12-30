@@ -11,6 +11,7 @@ interface Props {
 }
 
 const EventCard = ({ title, image, slug, location, date, time }: Props) => {
+	console.log('event image URL:', image);
 	return (
 		<Link href={`/events/${slug}`} id="event-card">
 			<Image
